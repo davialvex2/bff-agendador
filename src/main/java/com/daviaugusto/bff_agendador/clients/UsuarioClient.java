@@ -7,6 +7,7 @@ import com.daviaugusto.bff_agendador.infrastructure.dtos.in.UsuarioDTORequest;
 import com.daviaugusto.bff_agendador.infrastructure.dtos.out.EnderecoDTOResponse;
 import com.daviaugusto.bff_agendador.infrastructure.dtos.out.TelefoneDTOResponse;
 import com.daviaugusto.bff_agendador.infrastructure.dtos.out.UsuarioDTOResponse;
+import com.daviaugusto.bff_agendador.infrastructure.dtos.out.ViaCepDTOResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,4 +50,7 @@ public interface UsuarioClient {
     TelefoneDTOResponse inserirTelefone(@RequestBody TelefoneDTORequest telefoneDTO,
                                         @RequestHeader("Authorization") String token);
 
+
+    @GetMapping("/endereco/{cep}")
+    ViaCepDTOResponse buscarCep(@PathVariable("cep") String cep);
 }

@@ -8,6 +8,7 @@ import com.daviaugusto.bff_agendador.infrastructure.dtos.in.UsuarioDTORequest;
 import com.daviaugusto.bff_agendador.infrastructure.dtos.out.EnderecoDTOResponse;
 import com.daviaugusto.bff_agendador.infrastructure.dtos.out.TelefoneDTOResponse;
 import com.daviaugusto.bff_agendador.infrastructure.dtos.out.UsuarioDTOResponse;
+import com.daviaugusto.bff_agendador.infrastructure.dtos.out.ViaCepDTOResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -54,5 +55,8 @@ public class UsuarioService {
         return usuarioClient.inserirTelefone(telefoneDTO, token);
     }
 
+    public ViaCepDTOResponse buscarCep(String cep){
+        return usuarioClient.buscarCep(cep);
+    }
 }
 
